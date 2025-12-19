@@ -45,8 +45,8 @@ CPU、GPU 对比如下：
 
 *提交交易 Commit Transaction*时，分为以下四个阶段：
 
-1. 布局 layout：准备 view、layer 层级结构，设置 layer 属性，例如：`frame`、`backgroundColor`、`border`等。
-2. 渲染 display：对 layer 的 backing image 进行渲染。渲染会调用`draw(_:)`、`draw(_:in:)`方法。
+1. 布局 layout：更新 view、layer 层级结构，并调用 `layoutSubviews()` 和 `layer` 的 `addSubview()`; 设置 layer 属性，例如：`frame`、`backgroundColor`、`border`等。
+2. 渲染 display：Apple 用 `Core Graphics` 的 `CGContext` 对 layer 的 backing image 进行渲染。渲染会调用`draw(_:)`、`draw(_:in:)`方法。
 3. 准备 prepare：Core Animation 准备将 animation data 发送至 render server。图片解码、转换也是在此阶段。
 4. 提交 commit：Core Animation 打包所有图层和属性，使用进程间通信（IPC，Inter-Process Communication）发送至 render tree 进行渲染。这个过程是递归的，必须迭代整个视图层级。如果图层树复杂，整个过程会很昂贵。这也是为什么要让图层树尽可能平坦，以确保这一阶段尽可能高效。
 
@@ -60,8 +60,8 @@ CPU、GPU 对比如下：
 
 动画本身分为三个阶段：
 
-1. 创建动画，更新视图层级。
-2. 准备和提交动画。这一阶段会调用`layoutSubviews()`和`drawRect`。
+1. 创建动画，更新视图层级。(即在 commit transaction 前的 event handling 阶段执行)
+2. 准备和提交动画。这一阶段会调用 `layoutSubviews()` 和 `draw(_:)`、`draw(_:in:)`。(即在上述 6 个阶段的第一、二个阶段执行)
 3. 提交视图层级和动画。
 
 ![CoreAnimationPipeline](images/CAPipeline.png)
