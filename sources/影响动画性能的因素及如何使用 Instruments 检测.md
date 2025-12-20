@@ -60,9 +60,9 @@ CPU、GPU 对比如下：
 
 动画本身分为三个阶段：
 
-1. 创建动画，更新视图层级。(即在 commit transaction 前的 event handling 阶段执行)
-2. 准备和提交动画。这一阶段会调用 `layoutSubviews()` 和 `draw(_:)`、`draw(_:in:)`。(即在上述 6 个阶段的第一、二个阶段执行)
-3. 提交视图层级和动画。
+1. (Application) 创建动画，更新视图层级 (例如通过 UIView.animate(withDuration:animations:completion:))。这一步骤在 commit transaction 前的 event handling 阶段执行.
+2. (Application) 准备和提交动画给 render server。这一阶段在上述的 commit transaction 阶段进行.
+3. (Render server) render server 适当地渲染每一帧 (渲染时无需进程间通信).
 
 ![CoreAnimationPipeline](images/CAPipeline.png)
 
@@ -300,5 +300,5 @@ Demo名称：CoreAnimation
 1. [How CPU and GPU Work Together](https://www.omnisci.com/technical-glossary/cpu-vs-gpu)
 2. [What’s the Difference Between a CPU and a GPU?](https://blogs.nvidia.com/blog/2009/12/16/whats-the-difference-between-a-cpu-and-a-gpu/)
 3. [Instruments Tutorial with Swift: Getting Started](https://www.raywenderlich.com/397-instruments-tutorial-with-swift-getting-started)
-
+4. [WWDC14: Advanced Graphics and Animations for iOS Apps](https://wwdcnotes.com/documentation/wwdcnotes/wwdc14-419-advanced-graphics-and-animations-for-ios-apps/)
    
