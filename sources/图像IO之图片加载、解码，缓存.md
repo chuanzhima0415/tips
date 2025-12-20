@@ -318,7 +318,6 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 这篇文章介绍了图片加载、解码可能涉及到的性能问题，并提供了一些解决方案。下一篇文章[图层性能之离屏渲染、栅格化、回收池](https://github.com/pro648/tips/blob/master/sources/%E5%9B%BE%E5%B1%82%E6%80%A7%E8%83%BD%E4%B9%8B%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93%E3%80%81%E6%A0%85%E6%A0%BC%E5%8C%96%E3%80%81%E5%9B%9E%E6%94%B6%E6%B1%A0.md)将介绍图层渲染和图层组合相关的性能问题。
 
 > 上一篇：[影响动画性能的因素及如何使用 Instruments 检测](./影响动画性能的因素及如何使用%20Instruments%20检测.md)
->
 > 下一篇：[图层性能之离屏渲染、栅格化、回收池](https://github.com/pro648/tips/blob/master/sources/%E5%9B%BE%E5%B1%82%E6%80%A7%E8%83%BD%E4%B9%8B%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93%E3%80%81%E6%A0%85%E6%A0%BC%E5%8C%96%E3%80%81%E5%9B%9E%E6%94%B6%E6%B1%A0.md)
 
 Demo名称：CoreAnimation  

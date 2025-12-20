@@ -174,7 +174,6 @@ Demo名称：CoreAnimation
 源码地址：<https://github.com/pro648/BasicDemos-iOS/tree/master/CoreAnimation>
 
 > 上一篇：[图层时间CAMediaTiming](https://github.com/pro648/tips/blob/master/sources/%E5%9B%BE%E5%B1%82%E6%97%B6%E9%97%B4CAMediaTiming.md)
->
 > 下一篇：[影响动画性能的因素及如何使用 Instruments 检测](./影响动画性能的因素及如何使用%20Instruments%20检测.md)
 
 参考资料：
